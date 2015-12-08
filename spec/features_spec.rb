@@ -3,7 +3,7 @@
 # include Capybara::DSL
 # Capybara.default_driver = :selenium
 
-describe 'user stories', :js => true do
+describe 'user stories', :type => :feature do
   # As two Players,
   # So we can play a personalised game of Battle,
   # We want to Start a fight by entering our names and seeing them
