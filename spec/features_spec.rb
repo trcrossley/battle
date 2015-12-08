@@ -28,7 +28,7 @@ describe 'user stories' do
   to attack Player 2, and I want to get a confirmation' do
     sign_in_and_play
     click_button 'Attack'
-    expect(page).to have_content 'Tristan attacked!'
+    expect(page).to have_content 'Someone attacks!'
   end
 
 end

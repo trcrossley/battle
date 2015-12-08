@@ -13,11 +13,19 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  post '/attack' do
+    session[:attack_confirmation] = params[:attack_confirmation]
+    redirect '/play'
+  end
+
   get '/play' do
     @nameA = session['nameA']
     @nameB = session['nameB']
+    @attack_confirmation = session[:attack_confirmation]
     erb(:play)
   end
+
+
 
   run! if app_file == $0
 end
