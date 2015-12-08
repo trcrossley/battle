@@ -12,7 +12,8 @@ describe 'user stories', :type => :feature do
     visit '/'
     fill_in 'nameA', :with => 'Tristan'
     fill_in 'nameB', :with => 'Camilla'
-    click_button 'Submit'
-    expect(page).to have_content?('Tristant', 'Camilla')
+    click_button 'Play!'
+    expect(page).to have_content("Camilla")
+    expect(page).to have_content("Tristan")
   end
 end
