@@ -28,7 +28,7 @@ describe 'user stories' do
   to attack Player 2, and I want to get a confirmation' do
     sign_in_and_play
     click_button 'Attack'
-    expect(page).to have_content 'Tristan attacks Camilla for 10 damage!'
+    expect(page).to have_content 'Camilla attacks Tristan for 10 damage!'
   end
 
   #   As Player 1,
@@ -38,7 +38,19 @@ describe 'user stories' do
   attacks reduce HP by 10' do
     sign_in_and_play
     click_button 'Attack'
-    expect(page).not_to have_content 'Camilla: 60'
+    expect(page).not_to have_content 'Tristan: 60'
+    expect(page).to have_content 'Tristan: 50'
+  end
+
+  #   As two Players,
+  # So we can continue our game of Battle,
+  # We want to switch turns
+  it 'So we can continue our game of Battle,
+  we want to switch turns' do
+    sign_in_and_play
+    click_button 'Attack'
+    expect(page).to have_content 'Tristan: 50'
+    click_button 'Attack'
     expect(page).to have_content 'Camilla: 50'
   end
 end

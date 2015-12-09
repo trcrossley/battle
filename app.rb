@@ -19,7 +19,7 @@ class Battle < Sinatra::Base
   post '/attack' do
     session[:attack_confirmation] = params[:attack_confirmation]
     @game = $game
-    @game.attack(@game.playerB)
+    @game.attack_switch
     redirect '/play'
   end
 

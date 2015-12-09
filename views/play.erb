@@ -4,7 +4,7 @@
 <form action="/attack" method=post>
   <input type="submit" value="Attack" name="attack_confirmation">
   <% if @attack_confirmation %>
-  <h1> <%= @game.playerA.name %> attacks <%= @game.playerB.name %> for 10 damage!</h1>
+  <h1> <%= @game.active_player %> attacks <%= @game.attacked_player %> for 10 damage!</h1>
   <% end %>
 </form>
 
