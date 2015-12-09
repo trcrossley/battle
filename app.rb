@@ -16,12 +16,15 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     session[:attack_confirmation] = params[:attack_confirmation]
+    $playerA.attack($playerB)
     redirect '/play'
   end
 
   get '/play' do
     @nameA = $playerA.name
     @nameB = $playerB.name
+    @hpA = $playerA.hp
+    @hpB = $playerB.hp
     @attack_confirmation = session[:attack_confirmation]
     erb(:play)
   end
