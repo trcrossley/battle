@@ -1,12 +1,12 @@
 <h3> Player A </h3>
-<h2> <%= @nameA %>: <%= @hpA %> HP </h2>
+<h2> <%= @game.playerA.name %>: <%= @game.playerA.hp %> HP </h2>
 
 <form action="/attack" method=post>
   <input type="submit" value="Attack" name="attack_confirmation">
   <% if @attack_confirmation %>
-  <h1> <%= "#{@nameA} attacks #{@nameB} for 10 damage!" %></h1>
+  <h1> <%= @game.playerA.name %> attacks <%= @game.playerB.name %> for 10 damage!</h1>
   <% end %>
 </form>
 
 <h3> Player B </h3>
-<h2> <%= @nameB %>: <%= @hpB %> HP </h2>
+<h2> <%= @game.playerB.name %>: <%= @game.playerB.hp %> HP </h2>
