@@ -4,3 +4,7 @@ def sign_in_and_play
   fill_in 'nameB', :with => 'Camilla'
   click_button 'Play!'
 end
+
+def fatal_attack
+  20.times { click_button 'Attack'}
+end

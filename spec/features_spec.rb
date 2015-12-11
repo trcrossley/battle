@@ -1,6 +1,9 @@
 describe 'user stories' do
 
-  # session = Capybara::Session.new :selenium
+
+before do
+  allow(Kernel).to receive(:rand).and_return(10)
+end
 
   # As two Players,
   # So we can play a personalised game of Battle,
@@ -53,4 +56,25 @@ describe 'user stories' do
     click_button 'Attack'
     expect(page).to have_content 'Camilla: 50'
   end
+
+  #   As a Player,
+  # So I can Lose a game of Battle,
+  # I want to see a 'Lose' message if I reach 0HP first
+  it 'So I can lose a game of Battle,
+  I want to see a lose message if I reach 0HP first' do
+    sign_in_and_play
+    fatal_attack
+    expect(page).to have_content 'Game Over!'
+  end
+
+  # As a Player,
+  # So I can play a suspenseful game of Battle,
+  # I want all Attacks to deal a random amount of damage
+  xit 'So I can play a suspenseful game of Battle,
+  I want all Attacks to deal a random amount of damage' do
+    sign_in_and_play
+    click_button 'Attack'
+    expect
+  end
+
 end

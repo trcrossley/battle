@@ -1,3 +1,13 @@
+<% if @game.dead?(@game.playerA) %>
+  <h1> Game Over! </h1>
+  <h2> <%= @game.playerB.name %> Wins! </h2>
+<% end %>
+<% if @game.dead?(@game.playerB) %>
+  <h1> Game Over! </h1>
+  <h2> <%= @game.playerA.name %> Wins! </h2>
+<% end %>
+
+
 <h3> Player A </h3>
 <h2> <%= @game.playerA.name %>: <%= @game.playerA.hp %> HP </h2>
 

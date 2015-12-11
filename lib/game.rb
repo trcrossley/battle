@@ -38,5 +38,12 @@ class Game
     @counter += 1
   end
 
+  def dead?(player)
+    if player.hp <= 0
+      true
+    else
+      false
+    end
+  end
 
 end

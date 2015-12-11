@@ -6,9 +6,9 @@ class Player
   def initialize(name, hp = DEFAULT_HP)
     @name = name
     @hp = hp
-  end  
+  end
 
   def damage
-    @hp -= 10
+    @hp -= Kernel.rand(1..10)
   end
 end
